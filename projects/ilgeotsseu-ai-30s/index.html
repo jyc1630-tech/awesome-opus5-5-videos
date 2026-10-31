@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>읽걷쓰AI 30초 모션그래픽</title>
+<style>
+  @font-face { font-family: P; font-weight: 500; src: url(fonts/Pretendard-Medium.woff2) format("woff2"); }
+  @font-face { font-family: P; font-weight: 600; src: url(fonts/Pretendard-SemiBold.woff2) format("woff2"); }
+  @font-face { font-family: P; font-weight: 700; src: url(fonts/Pretendard-Bold.woff2) format("woff2"); }
+  @font-face { font-family: P; font-weight: 800; src: url(fonts/Pretendard-ExtraBold.woff2) format("woff2"); }
+  :root { --ink: #111318; --blue: #0B5CD5; --paper: #F3F4F6; --line: #D5D8DE; }
+  html, body { margin: 0; background: #000; }
+  body.preview { overflow: hidden; height: 100vh; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--paper);
+           font-family: P, sans-serif; color: var(--ink); transform-origin: top left; }
+  body.preview #stage { transform: scale(var(--fit, .45)); left: var(--left, 0px); }
+  .abs { position: absolute; }
+  .hide { display: none !important; }
+  /* 규칙 17: 세로 안전 영역 — 제목 y343 · 본 영상 y420~1500 · 자막 y1285 · 출처 y1537~1575 */
+  .title { left: 0; right: 0; top: 343px; transform: translateY(-50%); text-align: center;
+           font-size: 76px; font-weight: 800; letter-spacing: -2px; }
+  .title small { display: block; font-size: 32px; font-weight: 600; color: #6B7280; letter-spacing: 0; margin-bottom: 6px; }
+  .content { left: 0; top: 420px; width: 1080px; height: 1080px; }
+  .sub { left: 60px; right: 60px; top: 1285px; transform: translateY(-50%); text-align: center;
+         font-size: 50px; font-weight: 700; letter-spacing: -1px; }
+  .sub span { background: var(--ink); color: #fff; padding: 14px 30px; border-radius: 10px;
+              box-decoration-break: clone; -webkit-box-decoration-break: clone; line-height: 1.6; }
+  .src { left: 0; right: 0; top: 1537px; height: 38px; text-align: center; font-size: 24px; font-weight: 500; color: #8A9099; }
+  .wipe { left: 0; top: 0; width: 1080px; height: 1920px; background: var(--blue); }
+  .lbl { font-size: 34px; font-weight: 700; text-align: center; }
+  .big { font-size: 150px; font-weight: 800; letter-spacing: -5px; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- ───────── 씬 1 (0~15s): 도식 하나 = H → AI → H ───────── -->
+  <div id="s1">
+    <div class="abs title"><small>인천광역시교육청</small>읽걷쓰AI</div>
+    <svg class="abs content" viewBox="0 0 1080 1080">
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+          <path d="M0 0 L10 5 L0 10z" fill="#111318"/>
+        </marker>
+      </defs>
+      <!-- 기준선(고정) -->
+      <line x1="80" y1="700" x2="1000" y2="700" stroke="#D5D8DE" stroke-width="4"/>
+
+      <!-- 노드 1: 학생 + 읽·걷·쓰 사물 -->
+      <g id="n1" transform="translate(190 560)">
+        <circle cx="0" cy="-70" r="46" fill="#111318"/>
+        <rect x="-70" y="-14" width="140" height="150" rx="40" fill="#111318"/>
+      </g>
+      <g id="tools" transform="translate(190 310)">
+        <!-- 책 -->
+        <g id="t_book" transform="translate(-85 0)"><rect x="-34" y="-26" width="68" height="52" rx="4" fill="#0B5CD5"/><line x1="0" y1="-26" x2="0" y2="26" stroke="#F3F4F6" stroke-width="5"/></g>
+        <!-- 신발 -->
+        <g id="t_shoe" transform="translate(0 0)"><path d="M-36 14 L-36 -24 L-8 -24 L-4 -4 L30 4 Q38 6 38 14 L38 22 L-36 22z" fill="#0B5CD5"/></g>
+        <!-- 연필 -->
+        <g id="t_pen" transform="translate(85 0) rotate(-35)"><rect x="-10" y="-38" width="20" height="62" fill="#0B5CD5"/><path d="M-10 24 L0 42 L10 24z" fill="#111318"/></g>
+      </g>
+      <!-- 질문 말풍선 -->
+      <g id="q" transform="translate(300 430)">
+        <rect x="-10" y="-60" width="110" height="100" rx="22" fill="#fff" stroke="#111318" stroke-width="6"/>
+        <path d="M6 40 L-18 66 L30 40z" fill="#111318"/>
+        <text x="45" y="20" text-anchor="middle" font-size="72" font-weight="800" fill="#0B5CD5" font-family="P">?</text>
+      </g>
+
+      <!-- 화살표 1 -->
+      <line id="a1" x1="300" y1="560" x2="440" y2="560" stroke="#111318" stroke-width="10" marker-end="url(#ah)" pathLength="1" stroke-dasharray="1"/>
+      <!-- 노드 2: AI 칩 -->
+      <g id="n2" transform="translate(540 560)">
+        <rect x="-90" y="-90" width="180" height="180" rx="22" fill="#0B5CD5"/>
+        <g stroke="#0B5CD5" stroke-width="10">
+          <line x1="-50" y1="-90" x2="-50" y2="-115"/><line x1="0" y1="-90" x2="0" y2="-115"/><line x1="50" y1="-90" x2="50" y2="-115"/>
+          <line x1="-50" y1="90" x2="-50" y2="115"/><line x1="0" y1="90" x2="0" y2="115"/><line x1="50" y1="90" x2="50" y2="115"/>
+        </g>
+        <text x="0" y="24" text-anchor="middle" font-size="76" font-weight="800" fill="#fff" font-family="P">AI</text>
+      </g>
+      <!-- AI가 넓혀 준 생각(가지) -->
+      <g id="spread" stroke="#0B5CD5" stroke-width="6" stroke-linecap="round">
+        <line x1="540" y1="440" x2="470" y2="350" pathLength="1" stroke-dasharray="1"/>
+        <line x1="540" y1="440" x2="540" y2="330" pathLength="1" stroke-dasharray="1"/>
+        <line x1="540" y1="440" x2="610" y2="350" pathLength="1" stroke-dasharray="1"/>
+      </g>
+
+      <!-- 화살표 2 -->
+      <line id="a2" x1="640" y1="560" x2="780" y2="560" stroke="#111318" stroke-width="10" marker-end="url(#ah)" pathLength="1" stroke-dasharray="1"/>
+      <!-- 노드 3: 학생 + 완성한 글 -->
+      <g id="n3" transform="translate(890 560)">
+        <circle cx="0" cy="-70" r="46" fill="#111318"/>
+        <rect x="-70" y="-14" width="140" height="150" rx="40" fill="#111318"/>
+      </g>
+      <g id="paper" transform="translate(890 330)">
+        <rect x="-55" y="-70" width="110" height="140" rx="6" fill="#fff" stroke="#111318" stroke-width="6"/>
+        <g stroke="#111318" stroke-width="7"><line x1="-30" y1="-35" x2="30" y2="-35"/><line x1="-30" y1="-5" x2="30" y2="-5"/><line x1="-30" y1="25" x2="10" y2="25"/></g>
+      </g>
+
+      <!-- 이름표(기준선 아래, 고정 위치) -->
+      <g font-family="P" font-weight="800" font-size="56" text-anchor="middle">
+        <text id="l1" x="190" y="790" fill="#111318">H</text>
+        <text id="l2" x="540" y="790" fill="#0B5CD5">A</text>
+        <text id="l3" x="890" y="790" fill="#111318">H</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ───────── 씬 2 (15~30s): 도식 하나 = 성과 기록 ───────── -->
+  <div id="s2" class="hide">
+    <div class="abs title"><small>2023 ~ 2025</small>읽걷쓰의 기록</div>
+    <div class="abs content">
+      <!-- 주인공: 학생 저자 수 -->
+      <div id="num" class="abs big" style="left:0; right:0; top:90px; text-align:center;">0</div>
+      <div id="numUnit" class="abs lbl" style="left:0; right:0; top:270px; color:#6B7280;">명의 학생 저자</div>
+      <!-- 보조 1: 책 더미 -->
+      <svg id="books" class="abs" style="left:140px; top:330px;" width="420" height="320" viewBox="0 0 420 320"></svg>
+      <!-- 보조 2: 최우수 별 2개 -->
+      <svg id="stars" class="abs" style="left:600px; top:370px;" width="360" height="260" viewBox="0 0 360 260">
+        <g id="st1" transform="translate(90 110)"><path id="starPath" d="M0-70 L20-22 L72-22 L30 10 L46 62 L0 30 L-46 62 L-30 10 L-72-22 L-20-22z" fill="#0B5CD5"/></g>
+        <g id="st2" transform="translate(270 110)"><path d="M0-70 L20-22 L72-22 L30 10 L46 62 L0 30 L-46 62 L-30 10 L-72-22 L-20-22z" fill="#0B5CD5"/></g>
+        <g font-family="P" font-weight="700" font-size="30" fill="#6B7280" text-anchor="middle">
+          <text id="y1" x="90" y="230">2025</text><text id="y2" x="270" y="230">2026</text>
+        </g>
+      </svg>
+      <!-- 명패 -->
+      <div id="plate" class="abs" style="left:190px; right:190px; top:690px; height:110px; border-radius:16px;
+           background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:center;
+           font-size:44px; font-weight:800; letter-spacing:-1px;">도성훈 인천광역시교육감</div>
+    </div>
+  </div>
+
+  <div id="sub" class="abs sub"><span></span></div>
+  <div id="src" class="abs src"></div>
+  <div id="wipe" class="abs wipe hide"></div>
+</div>
+
+<script>
+const FPS = 30, DUR = 30;
+const $ = id => document.getElementById(id);
+const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
+const easeOutExpo = x => x >= 1 ? 1 : 1 - Math.pow(2, -10 * x);
+// 등장: 투명도 없이 크기·위치로만 (규칙 12 — 페이드 금지)
+const prog = (t, start, len = 0.6) => easeOutExpo(clamp((t - start) / len));
+
+function pop(el, t, start, { len = 0.6, from = 0.4, dy = 0 } = {}) {
+  if (t < start) { el.style.visibility = 'hidden'; return; }
+  el.style.visibility = 'visible';
+  const p = prog(t, start, len);
+  const s = from + (1 - from) * p;
+  if (el instanceof SVGElement) {
+    const base = el.dataset.base ?? (el.dataset.base = el.getAttribute('transform') || '');
+    const bb = el.getBBox(), cx = bb.x + bb.width / 2, cy = bb.y + bb.height / 2;
+    el.setAttribute('transform', `${base} translate(0 ${dy * (1 - p)}) translate(${cx} ${cy}) scale(${s}) translate(${-cx} ${-cy})`);
+  } else {
+    el.style.transform = `translateY(${dy * (1 - p)}px) scale(${s})`;
+  }
+}
+function draw(el, t, start, len = 0.6) {
+  if (t < start) { el.style.visibility = 'hidden'; return; }
+  el.style.visibility = 'visible';
+  el.setAttribute('stroke-dashoffset', 1 - prog(t, start, len));
+}
+
+// 자막 = 말. 말이 시작하는 프레임에 바로 뜸(규칙 6), 화면 글자로 되풀이하지 않음(원칙 03)
+const SUBS = [
+  [0.0,  4.0, '인천 학생은 읽고, 걷고, 쓰며 배웁니다'],
+  [4.0,  7.5, '생각과 질문은 학생이 먼저'],
+  [7.5, 11.0, 'AI는 그 생각을 넓히는 도구'],
+  [11.0, 15.0, '완성은 다시, 학생 자신의 언어로'],
+  [15.0, 19.5, '3년 동안 책을 낸 학생 저자'],
+  [19.5, 23.5, '함께 펴낸 책은 7,555권'],
+  [23.5, 27.0, '교육부 평가 2년 연속 최우수'],
+  [27.0, 30.0, '“AI 시대일수록 인간다움이 중요”'],
+];
+const SRC1 = 'H-A-H: Human → AI → Human · 인천시교육청 읽걷쓰AI 원칙';
+const SRC2 = '자료: 인천시교육청·도성훈 교육감 언론 인터뷰(2026.5~10) · 저자·도서 수는 2023~2025 누계';
+
+// 책 더미 미리 생성(보조 사물 1)
+const BOOKS = 10;
+(() => {
+  const svg = $('books'), cols = ['#111318', '#0B5CD5', '#2B2F36'];
+  for (let i = 0; i < BOOKS; i++) {
+    const r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    const w = 300 - (i % 3) * 26;
+    r.setAttribute('x', 210 - w / 2 + ((i * 37) % 3 - 1) * 10);
+    r.setAttribute('y', 316 - (i + 1) * 30);
+    r.setAttribute('width', w); r.setAttribute('height', 26); r.setAttribute('rx', 4);
+    r.setAttribute('fill', cols[i % 3]);
+    svg.appendChild(r);
+  }
+})();
+
+function render(t) {
+  const scene2 = t >= 15;
+  $('s1').classList.toggle('hide', scene2);
+  $('s2').classList.toggle('hide', !scene2);
+
+  // 씬 1 — 슬롯마다 도식에 요소 하나씩 더함(원칙 01)
+  if (!scene2) {
+    pop($('n1'), t, 0.0, { dy: 40 });
+    pop($('t_book'), t, 0.5); pop($('t_shoe'), t, 1.3); pop($('t_pen'), t, 2.1);
+    pop($('l1'), t, 0.0);
+    pop($('q'), t, 4.0);
+    draw($('a1'), t, 7.5); pop($('n2'), t, 7.9); pop($('l2'), t, 7.9);
+    [...$('spread').children].forEach((l, i) => draw(l, t, 8.6 + i * 0.25));
+    draw($('a2'), t, 11.0); pop($('n3'), t, 11.4, { dy: 40 }); pop($('l3'), t, 11.4);
+    pop($('paper'), t, 12.2);
+  }
+
+  // 씬 2
+  if (scene2) {
+    const n = Math.round(114988 * easeOutExpo(clamp((t - 15.4) / 2.2)));
+    $('num').textContent = n.toLocaleString('ko-KR');
+    pop($('num'), t, 15.4, { from: 0.7 }); pop($('numUnit'), t, 15.4, { from: 0.7 });
+    [...$('books').children].forEach((b, i) => pop(b, t, 19.5 + i * 0.12, { len: 0.35, from: 0.2, dy: -60 }));
+    pop($('st1'), t, 23.5); pop($('st2'), t, 24.1);
+    pop($('y1'), t, 23.5); pop($('y2'), t, 24.1);
+    pop($('plate'), t, 27.0, { from: 0.6, dy: 30 });
+  }
+
+  // 씬 경계 전환: 파란 판이 한 방향으로 지나감(원칙 04, 전체 1회 — 규칙 11)
+  const w = $('wipe');
+  if (t >= 14.6 && t < 15.4) {
+    w.classList.remove('hide');
+    const p = (t - 14.6) / 0.8;               // 0 → 1
+    const x = p < 0.5 ? (1 - easeOutExpo(p * 2)) * 1080 : -easeOutExpo((p - 0.5) * 2) * 1080;
+    w.style.transform = `translateX(${x}px)`;
+  } else w.classList.add('hide');
+
+  const cur = SUBS.find(([a, b]) => t >= a && t < b) || SUBS[SUBS.length - 1];
+  $('sub').firstChild.textContent = cur[2];
+  $('src').textContent = scene2 ? SRC2 : SRC1;
+}
+window.render = render;
+window.DUR = DUR; window.FPS = FPS;
+
+// 미리보기: ?render 없으면 실시간 재생(30초 반복)
+if (!location.search.includes('render')) {
+  document.body.classList.add('preview');
+  const fit = () => { const f = Math.min(innerWidth / 1080, innerHeight / 1920), r = document.documentElement.style;
+    r.setProperty('--fit', f); r.setProperty('--left', (innerWidth - 1080 * f) / 2 + 'px'); };
+  fit(); addEventListener('resize', fit);
+  const t0 = performance.now();
+  const loop = () => { render(((performance.now() - t0) / 1000) % DUR); requestAnimationFrame(loop); };
+  document.fonts.ready.then(loop);
+}
+</script>
+</body>
+</html>
