@@ -8297,5 +8297,28 @@
   "poster_url": "https://media.skillry.dev/opus-5-5/ayumi-t820-871023/original.04e4e9025d.webp",
   "skillry_url": "https://skillry.dev/ai-videos/opus-5-5/ayumi-t820-871023",
   "added": "2026-10-08"
+ },
+ {
+  "slug": "lemolab-left-behind",
+  "author": "LemoLab",
+  "author_url": "https://github.com/lemomo-ai",
+  "post_url": "https://github.com/lemomo-ai/lemo-opuscar/blob/main/styles/pictogram-motion/DEMO.md",
+  "category": "motion",
+  "tech_tags": [
+   "canvas",
+   "audio"
+  ],
+  "prompt": "Left Behind (Pictogram Motion demo film, 50.0 s, 1920x1080, 24 fps). A yellow umbrella left on a bus waits out a sunny day on the lost-property shelf, then opens with 312 others when the storm comes back: objects, vehicles, weather and signs as beat-locked geometric pictograms.\n\nNo single prompt was published. The film was made with the lemo-opuscar style library (styles/pictogram-motion): its STYLE.md, DEMO.md (story, shot list, score) and demo/ source code are in the repository.",
+  "prompt_partial": true,
+  "poster_url": "https://raw.githubusercontent.com/lemomo-ai/lemo-opuscar/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/pictogram-motion/poster.jpg",
+  "skillry_url": null,
+  "video_url": "https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/pictogram-motion.mp4",
+  "video_sha256": "da4345a029cdda522f4030b1e25f59cc7494f87470349aee4cf74210b6d14a1c",
+  "source_url": "https://github.com/lemomo-ai/lemo-opuscar",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "\"Left Behind\" by LemoLab (https://github.com/lemomo-ai/lemo-opuscar), licensed under CC BY 4.0. Original file, no changes made.",
+  "modified": false,
+  "added": "2026-11-05"
  }
 ]

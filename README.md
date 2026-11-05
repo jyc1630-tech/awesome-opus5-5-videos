@@ -10,10 +10,10 @@ Every video here was made by asking Claude Opus 5.5 to write the animation as co
 
 <a href="https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos"><img src="https://media.skillry.dev/opus-5-5/_readme/site-compare.592de731e6.webp" alt="The Opus 5.5 videos page on Skillry, showing each original next to its live remake" width="100%"></a>
 
-- 513 prompts in [`prompts/`](prompts/) and [`data/videos.json`](data/videos.json)
+- 514 prompts in [`prompts/`](prompts/) and [`data/videos.json`](data/videos.json)
 - 100 highlighted below, one per distinct prompt
 - Every entry links to the creator's original post
-- Latest update (2026-10-08): 38 videos added, mostly motion graphics and explainers
+- Latest update (2026-11-05): LemoLab's *Left Behind* added as an unedited CC BY 4.0 original
 
 ## Contents
 
@@ -21,6 +21,7 @@ Every video here was made by asking Claude Opus 5.5 to write the animation as co
 - [Explainers](#explainers) (16)
 - [3D scenes](#3d-scenes) (14)
 - [Games & interactive](#games--interactive) (12)
+- [CC BY originals](#cc-by-originals) (1)
 - [How to use a prompt](#how-to-use-a-prompt)
 - [Credits](#credits)
 
@@ -79,6 +80,14 @@ Every video here was made by asking Claude Opus 5.5 to write the animation as co
 <tr><td width="33%" valign="top"><a href="https://skillry.dev/ai-videos/opus-5-5/ved-cj-066575?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos"><img src="https://media.skillry.dev/opus-5-5/ved-cj-066575/preview.webp" alt="Opus 5.5 video by @Ved_CJ" width="100%"></a><br><a href="https://x.com/Ved_CJ/status/2103708392930066575"><b>@Ved_CJ</b></a> · <a href="prompts/ved-cj-066575.md">Prompt</a><br><sub>Three.js · Canvas</sub></td><td width="33%" valign="top"><a href="https://skillry.dev/ai-videos/opus-5-5/nolit64-347627?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos"><img src="https://media.skillry.dev/opus-5-5/nolit64-347627/preview.webp" alt="Opus 5.5 video by @NoLit64" width="100%"></a><br><a href="https://x.com/NoLit64/status/2103628970000347627"><b>@NoLit64</b></a> · <a href="prompts/nolit64-347627.md">Prompt</a><br><sub>Canvas · Web Audio · Playable</sub></td><td width="33%" valign="top"><a href="https://skillry.dev/ai-videos/opus-5-5/opener-ai-843891?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos"><img src="https://media.skillry.dev/opus-5-5/opener-ai-843891/preview.webp" alt="Opus 5.5 video by @opener_ai" width="100%"></a><br><a href="https://x.com/opener_ai/status/2103437714695843891"><b>@opener_ai</b></a> · <a href="prompts/opener-ai-843891.md">Prompt</a><br><sub>Canvas · Pixel art · Playable</sub></td></tr>
 </table>
 
+## CC BY originals
+
+Films whose creators published them under an open licence. They are linked as published, with no edits.
+
+<table>
+<tr><td width="33%" valign="top"><a href="https://github.com/lemomo-ai/lemo-opuscar/releases/download/films/pictogram-motion.mp4"><img src="https://raw.githubusercontent.com/lemomo-ai/lemo-opuscar/bebbbe1aa92a3cb4bb6f83500e61b23a17d1aa00/styles/pictogram-motion/poster.jpg" alt="Left Behind by LemoLab: a yellow umbrella pictogram on a navy grid" width="100%"></a><br><a href="https://github.com/lemomo-ai/lemo-opuscar"><b>LemoLab</b></a> · <i>Left Behind</i> · <a href="prompts/lemolab-left-behind.md">Details</a><br><sub>Canvas · Audio · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · original, unedited</sub></td></tr>
+</table>
+
 ## How to use a prompt
 
 1. Open a prompt file and copy the block under **Prompt**.
@@ -89,6 +98,6 @@ Some creators shared only part of their prompt, or only described the result in 
 
 ## Credits
 
-Every video and prompt belongs to its creator, linked from each entry. Previews are short clips hosted for this list. If you are a creator and want an entry changed or removed, open an issue.
+Every video and prompt belongs to its creator, linked from each entry. *Left Behind* © LemoLab, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), from [lemomo-ai/lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar), unedited. Previews are short clips hosted for this list. If you are a creator and want an entry changed or removed, open an issue.
 
 Browse the full collection with original and remake side by side at **[skillry.dev/ai-videos/opus-5-5](https://skillry.dev/ai-videos/opus-5-5?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos)**.
