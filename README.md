@@ -21,6 +21,7 @@ Every video here was made by asking Claude Opus 5.5 to write the animation as co
 - [Explainers](#explainers) (16)
 - [3D scenes](#3d-scenes) (14)
 - [Games & interactive](#games--interactive) (12)
+- [Production toolkit](#production-toolkit)
 - [How to use a prompt](#how-to-use-a-prompt)
 - [Credits](#credits)
 
@@ -78,6 +79,28 @@ Every video here was made by asking Claude Opus 5.5 to write the animation as co
 <tr><td width="33%" valign="top"><a href="https://skillry.dev/ai-videos/opus-5-5/froessell-562325?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos"><img src="https://media.skillry.dev/opus-5-5/froessell-562325/preview.webp" alt="Opus 5.5 video by @froessell" width="100%"></a><br><a href="https://x.com/froessell/status/2103789415323562325"><b>@froessell</b></a> · <a href="prompts/froessell-562325.md">Prompt</a><br><sub>Three.js · Canvas · Physics</sub></td><td width="33%" valign="top"><a href="https://skillry.dev/ai-videos/opus-5-5/aisongman-461057?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos"><img src="https://media.skillry.dev/opus-5-5/aisongman-461057/preview.webp" alt="Opus 5.5 video by @aisongman" width="100%"></a><br><a href="https://x.com/aisongman/status/2103763192971461057"><b>@aisongman</b></a> · <a href="prompts/aisongman-461057.md">Prompt</a><br><sub>Canvas · Pixel art · Playable</sub></td><td width="33%" valign="top"><a href="https://skillry.dev/ai-videos/opus-5-5/bilimfili1-459762?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos"><img src="https://media.skillry.dev/opus-5-5/bilimfili1-459762/preview.webp" alt="Opus 5.5 video by @Bilimfili1" width="100%"></a><br><a href="https://x.com/Bilimfili1/status/2103743617848459762"><b>@Bilimfili1</b></a> · <a href="prompts/bilimfili1-459762.md">Prompt</a><br><sub>Canvas · SVG</sub></td></tr>
 <tr><td width="33%" valign="top"><a href="https://skillry.dev/ai-videos/opus-5-5/ved-cj-066575?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos"><img src="https://media.skillry.dev/opus-5-5/ved-cj-066575/preview.webp" alt="Opus 5.5 video by @Ved_CJ" width="100%"></a><br><a href="https://x.com/Ved_CJ/status/2103708392930066575"><b>@Ved_CJ</b></a> · <a href="prompts/ved-cj-066575.md">Prompt</a><br><sub>Three.js · Canvas</sub></td><td width="33%" valign="top"><a href="https://skillry.dev/ai-videos/opus-5-5/nolit64-347627?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos"><img src="https://media.skillry.dev/opus-5-5/nolit64-347627/preview.webp" alt="Opus 5.5 video by @NoLit64" width="100%"></a><br><a href="https://x.com/NoLit64/status/2103628970000347627"><b>@NoLit64</b></a> · <a href="prompts/nolit64-347627.md">Prompt</a><br><sub>Canvas · Web Audio · Playable</sub></td><td width="33%" valign="top"><a href="https://skillry.dev/ai-videos/opus-5-5/opener-ai-843891?utm_source=github&utm_medium=readme&utm_campaign=awesome-opus5-5-videos"><img src="https://media.skillry.dev/opus-5-5/opener-ai-843891/preview.webp" alt="Opus 5.5 video by @opener_ai" width="100%"></a><br><a href="https://x.com/opener_ai/status/2103437714695843891"><b>@opener_ai</b></a> · <a href="prompts/opener-ai-843891.md">Prompt</a><br><sub>Canvas · Pixel art · Playable</sub></td></tr>
 </table>
+
+## Production toolkit
+
+Open-source tools that take an Opus 5.5 animation from storyboard to motion, sound, rendering and export.
+
+### Audio & production
+
+| Tool | What it does | Where it fits |
+| --- | --- | --- |
+| [Bark](https://github.com/suno-ai/bark) | Text-to-audio model from Suno: speech in many languages, plus music, ambience and sound effects | Narration, voice-over and SFX drafts |
+| [Pedalboard](https://github.com/spotify/pedalboard) | Spotify's Python library for audio effects (reverb, compression, EQ, VST3/AU plugins) | Scripted mixing and mastering of the soundtrack |
+| [OBS Studio](https://github.com/obsproject/obs-studio) | Free, cross-platform screen recording and live streaming | Recording the HTML animation as a video |
+| [Shotcut](https://github.com/mltframework/shotcut) | Cross-platform non-linear video editor built on the MLT framework | Trimming, layering audio, titles and transitions |
+| [FFmpeg](https://github.com/FFmpeg/FFmpeg) | Command-line toolkit to record, convert, encode and stream audio and video | Final encoding and export (MP4, WebM, GIF) |
+
+A typical pipeline: record the page with OBS Studio, generate voice or effects with Bark, polish the audio with Pedalboard, edit in Shotcut, then export with FFmpeg, for example:
+
+```bash
+ffmpeg -i recording.mkv -i soundtrack.wav -c:v libx264 -crf 18 -pix_fmt yuv420p -c:a aac -b:a 192k -shortest output.mp4
+```
+
+Check each project's license before using it in commercial work (Bark: MIT; Pedalboard: GPL-3.0; OBS Studio and Shotcut: GPL; FFmpeg: LGPL/GPL depending on the build).
 
 ## How to use a prompt
 
