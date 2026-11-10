@@ -22,6 +22,7 @@ Every video here was made by asking Claude Opus 5.5 to write the animation as co
 - [3D scenes](#3d-scenes) (14)
 - [Games & interactive](#games--interactive) (12)
 - [How to use a prompt](#how-to-use-a-prompt)
+- [Guides](#guides)
 - [Credits](#credits)
 
 ## Motion graphics
@@ -86,6 +87,10 @@ Every video here was made by asking Claude Opus 5.5 to write the animation as co
 3. Ask it to render the result as a single HTML file, then record the page if you want a video.
 
 Some creators shared only part of their prompt, or only described the result in their post; those files say so.
+
+## Guides
+
+- [종이 오리기(페이퍼 컷아웃) 콜라주 영상 만들기](guides/paper-cutout-collage.md): pick a paper cutout / collage reference, have Claude analyze its direction, swap in your own subject, generate cutout props with GPT Image, and composite them into a stop-motion video with code.
 
 ## Credits
 
